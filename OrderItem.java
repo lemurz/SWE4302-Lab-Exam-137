@@ -1,27 +1,21 @@
 public class OrderItem {
-    private String name;
-    private int quantity;
-    private double unitPrice;
+    private final MenuItem menuItem;
+    private final int quantity;
 
-    public OrderItem(String name, int quantity, double unitPrice) {
-        this.name = name;
+    public OrderItem(MenuItem menuItem, int quantity) {
+        this.menuItem = menuItem;
         this.quantity = quantity;
-        this.unitPrice = unitPrice;
     }
 
     public String getName() {
-        return name;
+        return menuItem.getName();
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
     public double calculateItemCost() {
-        return quantity * unitPrice;
+        return quantity * menuItem.getPrice();
     }
 }

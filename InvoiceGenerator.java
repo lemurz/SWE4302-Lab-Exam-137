@@ -1,21 +1,19 @@
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class InvoiceGenerator {
-    public void generateInvoice(Order order, String filePath) throws IOException {
-        try(FileWriter fw = new FileWriter(filePath)){
-            fw.write("Ice Cream Shop Invoice\n");
-
-            for(OrderItem item : order.getItems()){
-                fw.write(item.getName() + " - " + item.getQuantity() + " time(s): $"
+    public void generateInvoice(Order order, OrderCalculator calculator, String filePath) throws IOException {
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write("Ice Cream Shop Invoice\n");
+            for (OrderItem item : order.getItems()) {
+                writer.write(item.getName() + " - " + item.getQuantity() + " time(s): $"
                         + String.format("%.2f", item.calculateItemCost()) + "\n");
             }
-
-            fw.write("Subtotal: $" + String.format("%.2f", order.calculateSubTotal()) + "\n");
-            fw.write("Tax: $" + String.format("%.2f", order.calculateTax()) + "\n");
-            fw.write("Total Amount Due: $" + String.format("%.2f", order.calculateTotal()) + "\n");
+            writer.write("Container: " + order.getContainer() + "\n");
+            double subtotal = calculator.calculateSubtotal(order);
+            writer.write("Subtotal: $" + String.format("%.2f", subtotal) + "\n");
+            writer.write("Tax: $" + String.format("%.2f", calculator.calculateTax(subtotal)) + "\n");
+            writer.write("Total Amount Due: $" + String.format("%.2f", calculator.calculateTotal(order)) + "\n");
         }
     }
 }
