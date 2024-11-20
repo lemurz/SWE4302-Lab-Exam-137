@@ -1,17 +1,5 @@
-public class IceCreamFlavor {
-    private String name;
-    private double pricePerScoop;
-
-    public IceCreamFlavor(String name, double pricePerScoop){
-        this.name = name;
-        this.pricePerScoop = pricePerScoop;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPricePerScoop() {
-        return pricePerScoop;
+public class IceCreamFlavor extends MenuItem {
+    public IceCreamFlavor(String name, double price) {
+        super(name, price);
     }
 }

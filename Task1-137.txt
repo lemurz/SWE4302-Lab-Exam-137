@@ -1,0 +1,51 @@
+globalInventoryData
+
+<Line 8> <Bad naming> <Does not follow naming convention of classes>
+<Line 16> <Unrelated method> <Violation of SRP. Global Inventory Data should store data, not calculate something>
+<Line 9-13> <Static variables, No encapsulation> <Global variables must be avoided as much as possible>
+<Line 12-13> <Initialized values which are not constants>
+
+inventoryManagementSystem
+
+<Line 6> <Bad naming> <Does not follow proper naming convention>
+
+reportScheduler
+
+Entire class. Bad naming convention, static method, unused class.
+
+Warehouse
+
+<Line 4-6> <No encapsulation> <Attributes are public>
+<Line 4, Line 8> <Bad naming> <The id of what? What is i?>
+<Line 9-11> <Inconsistent attribute assignment> <Two attributes use 'this' keyword, but one doesn't. Creates an inconsistency visually>
+
+AppTest
+
+Entire code is filled with comments.
+The test codes have very inconsistent and unclear names. 
+The test codes themselves do not make it clear what is being tested.
+For some reason, it extends another class which is absolutely unnecessary and serves no purpose other than to create a visually displeasing situation.
+Line 26 has a static method.
+The only one test case actually present is not even a proper test case.
+
+inventorySystem
+
+<Line 6> <Bad Naming> <Class name doesn't follow proper naming convention>
+<Line 7> <Attribute assignment> <The attribute is not a constant>
+<Line 10-21> <Class inside a class>
+<Line 11> <Bad Naming> <Doesn't specify whose 'id' it is>
+<Line 11-19> <No encapsulation> <All attributes are public>
+<Line 23-37> <Long class> <Class inside a class>
+<Line 24-29> <No encapsulation>
+<Line 33-35> <No encapsulation>
+<Line 41-67> <Conditional complexity, nested if statements, magic numbers, feature envy> <Very difficult to read something with so many if statetments. On top of that, it is not clear why '0' is a threshold for price and stock. It is a magic number. Properties of 'warehouse' is being accessed via product>
+<Line 74-99> <Switch cases, Magic numbers> <Convoluted lines of code with unclear switch cases and magic numbers>
+<Line 106,107,114,115,116,124,125,126> <Message chaining>
+<Line 132> <Long Function>
+<Line 140> <Message chaining>
+<Line 143-155> <Conditional Complexity>
+The entire class is a long class, which would be split into multiple classes to carry out different functionalities
+
+
+
+
