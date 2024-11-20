@@ -1,3 +1,5 @@
+package src;
+
 public class OrderCalculator {
     public static final double TAX_RATE = 0.08;
     public static final double WAFFLE_CONE_PRICE = 5.00;

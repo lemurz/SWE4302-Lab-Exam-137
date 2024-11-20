@@ -1,3 +1,5 @@
+package src;
+
 public abstract class MenuItem {
     private final String name;
     private final double price;

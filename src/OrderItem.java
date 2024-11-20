@@ -1,3 +1,5 @@
+package src;
+
 public class OrderItem {
     private final MenuItem menuItem;
     private final int quantity;
